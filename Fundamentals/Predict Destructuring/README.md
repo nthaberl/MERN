@@ -1,0 +1,1 @@
+Practice predicting the outputs of code using destructuring
