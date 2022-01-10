@@ -1,0 +1,1 @@
+Objective: Practice reading Javascript the same way as the interpreter reads it
