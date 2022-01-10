@@ -10,7 +10,6 @@ console.log(otherRandomCar)
 //actual -- Tesla, Mercedes
 
 
-
 //2
 const employee = {
     name: 'Elon',
@@ -24,6 +23,7 @@ console.log(otherName);
 
 //prediction -- otherName
 //actual -- ReferenceError: name is not defined
+
 
 //3
 const person = {
@@ -52,6 +52,7 @@ console.log(first == third);
 
 //prediction -- TypeError, TypeError
 //actual -- false, true
+
 
 //5
 const lastTest = {
