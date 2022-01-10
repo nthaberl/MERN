@@ -1,0 +1,1 @@
+Practice updating vanilla JS into arrow functions
