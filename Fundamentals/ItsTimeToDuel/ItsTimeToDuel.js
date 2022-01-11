@@ -14,40 +14,46 @@ class Unit extends Card {
 
     attack (target) {
         target.res -= this.power;
-        console.log(`${target.name} takes ${this.power} damage! Their resilience is now at ${target.res}`);
+        console.log(`${this.name} attacks! ${target.name} takes ${this.power} damage! Their resilience is now at ${target.res}`);
     }
 }
 
 class Effect extends Card {
-    constructor (name, cost, text, magnitude){
+    constructor (name, cost, text, stat, magnitude){
         super(name, cost);
         this.text = text;
+        this.stat = stat;
         this.magnitude = magnitude;
     }
 
 
-    powerplay(target){
-        target.power += this.magnitude;
-        console.log(`${target.name} power: ${target.power}`);
-    }
-
-    resplay(target){
-        target.res += this.magnitude;
-        console.log(`${target.name} resilience : ${target.res}`);
+    play( target ) {
+        if( target instanceof Unit ) {
+            if (this.stat === "res"){
+                target.res += this.magnitude;
+                console.log(`${this.name} was played! ${target.name} now has ${target.res} resilience`);
+            }
+            if(this.stat === "power"){
+                target.power += this.magnitude
+                console.log(`${this.name} was played! ${target.name} now has ${target.power} power`);
+            }
+        } else {
+            throw new Error( "Target must be a unit!" );
+        }
     }
 }
 
 const RedBeltNinja = new Unit ("Red Belt Ninja", 3, 3, 4);
 
-const HardAlgorithm = new Effect("Hard Algorithm", 2, "increase target's resilience by 3", 3);
-HardAlgorithm.resplay(RedBeltNinja);
+const HardAlgorithm = new Effect("Hard Algorithm", 2, "increase target's resilience by 3", "res", 3);
+HardAlgorithm.play(RedBeltNinja);
 
 const BlackBeltNinja = new Unit ("Black Belt Ninja", 4, 5, 4);
 
-const Rejection = new Effect("Unhandled Promise Rejection", 1, "reduce target's resilience by 2", -2);
-Rejection.resplay(RedBeltNinja);
+const Rejection = new Effect("Unhandled Promise Rejection", 1, "reduce target's resilience by 2", "res", -2);
+Rejection.play(RedBeltNinja);
 
-const PP = new Effect("Pair Programming", 3, "increase target's power by 2", 2);
-PP.powerplay(RedBeltNinja);
+const PP = new Effect("Pair Programming", 3, "increase target's power by 2", "power", 2);
+PP.play(RedBeltNinja);
 
 RedBeltNinja.attack(BlackBeltNinja);
