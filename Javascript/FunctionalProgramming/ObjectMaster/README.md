@@ -1,0 +1,1 @@
+Practice using map and filter functions to get data from an immutable pokemon array!
