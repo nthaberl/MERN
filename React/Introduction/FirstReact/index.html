@@ -1,0 +1,22 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello React</title>
+    </head>
+    <body>
+        <div id="root">
+            <h1>First React page rendering...</h1>
+        </div>
+
+    <script crossorigin="" src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+    <script>
+        const App = React.createElement("h1", {}, "Our First React page has rendered"); //created a new method and passed in 3 arguments. 1st argument is the element we wanted created
+            //2nd argument is emprty for now
+            //3rd argument is the children, for now just a string
+        ReactDOM.render(App, document.getElementById("root"));
+        //after App has been defined we call ReactDom.render, we're telling react to display app in the element that has the id root
+    </script>
+    </body>
+</html>
+
