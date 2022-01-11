@@ -1,0 +1,1 @@
+practice building a class in Javascript and utilizing methods from the class
