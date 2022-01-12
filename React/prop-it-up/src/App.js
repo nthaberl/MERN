@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import PersonCard from './components/PersonCard';
+import PersonCard from './components/PersonCard'; //imports the class component so it's available for use in this file
 
 function App() {
   return (

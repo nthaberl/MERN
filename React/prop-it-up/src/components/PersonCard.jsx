@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react'; //don't need React here since we are already pulling from the 'react' library
 
 class PersonCard extends Component {
     render () {
@@ -11,7 +11,7 @@ class PersonCard extends Component {
     }
 }
 
-export default PersonCard;
+export default PersonCard; // this makes this globally accessible across the app, ES6/ES7 syntax
 
 //can alternately be written
 /* class PersonCard extends Component {
