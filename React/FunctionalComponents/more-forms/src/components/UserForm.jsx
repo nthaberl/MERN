@@ -16,7 +16,7 @@ const UserForm = (props) => {
 
 
     const createUser = (e) => {
-        e.preventDefault(); //prevent browser from automatically firing this function
+        e.preventDefault(); //prevent browser from handling submit, will rely on React to handle it
         const newUser = { firstName, lastName, email, password };
         console.log("Welcome", newUser);
     };
@@ -24,7 +24,7 @@ const UserForm = (props) => {
 
     const handleFirstName = e => { 
         setFirstName(e.target.value);
-        if(e.target.value.length <= 2 && e.target.value.length > 0){
+        if(e.target.value.length <= 2 && e.target.value.length !== null){
             setFirstNameError("First name must be at least 2 characters long!");
         } else {
             setFirstNameError("");
@@ -33,7 +33,7 @@ const UserForm = (props) => {
 
     const handleLastName = e => { 
         setLastName(e.target.value);
-        if(e.target.value.length <= 2 && e.target.value.length > 0){
+        if(e.target.value.length <= 2 && e.target.value.length !== null){
             setLastNameError("Last name must be at least 2 characters long!");
         } else {
             setLastNameError("");
@@ -42,7 +42,7 @@ const UserForm = (props) => {
 
     const handleEmail = e => { 
         setEmail(e.target.value);
-        if(e.target.value.length <= 2 && e.target.value.length > 0){
+        if(e.target.value.length <= 2 && e.target.value.length !== null){
             setEmailError("Email must be at least 2 characters long!");
         } else {
             setEmailError("");
@@ -51,7 +51,7 @@ const UserForm = (props) => {
 
     const handlePassword = e => { 
         setPassword(e.target.value);
-        if(e.target.value.length <= 8 && e.target.value.length > 0){
+        if(e.target.value.length <= 8 && e.target.value.length !== null){
             setPasswordError("Password must be at least 8 characters long!");
         } else {
             setPasswordError("");
@@ -73,42 +73,42 @@ const UserForm = (props) => {
         <form onSubmit={createUser}>
             <div>
                 <label>First Name: </label>
-                <input type="text" onChange={ handleFirstName } />
+                <input type="text" value={firstName} onChange={ handleFirstName } />
                 {
                     firstNameError ? 
-                    <p style = {{ color: "red"}} > {firstNameError}</p> : ''
+                    <p style = {{ color: "red"}} > {firstNameError}</p> : <p> &nbsp; </p>//add empty space character inside p tag
                 }
             </div>
             <div>
                 <label>Last Name: </label>
-                <input type="text" onChange={ handleLastName } />
+                <input type="text" value={lastName} onChange={ handleLastName } />
                 {
                     lastNameError ? 
-                    <p style = {{ color: "red"}} > {lastNameError}</p> : ''
+                    <p style = {{ color: "red"}} > {lastNameError}</p> : <p> &nbsp; </p>
                 }
             </div>
             <div>
                 <label>Email Address: </label>
-                <input type="email" onChange={ handleEmail } />
+                <input type="email" value={email} onChange={ handleEmail } />
                 {
                     emailError ? 
-                    <p style = {{ color: "red"}} > {emailError}</p> : ''
+                    <p style = {{ color: "red"}} > {emailError}</p> : <p> &nbsp; </p>
                 }
             </div>
             <div>
                 <label>Password: </label>
-                <input type="password" onChange={ handlePassword } />
+                <input type="password" value={password} onChange={ handlePassword } />
                 {
                     passwordError ? 
-                    <p style = {{ color: "red"}} > { passwordError }</p> : ''
+                    <p style = {{ color: "red"}} > { passwordError }</p> : <p> &nbsp; </p>
                 }
             </div>
             <div>
                 <label>Confirm Password: </label>
-                <input type="password" onChange = { handleConfirm } />
+                <input type="password" value={confirm} onChange = { handleConfirm } />
                 {
                     confirmError ?
-                    <p style = {{ color: "red" }}> { confirmError } </p> : ''
+                    <p style = {{ color: "red" }}> { confirmError } </p> : <p> &nbsp; </p>
                 }
             </div>
             <input type="submit" value="Create User" />
