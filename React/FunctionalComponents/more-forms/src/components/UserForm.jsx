@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-
+//everything dynamic on the DOM has to have it's own state
 const UserForm = (props) => {
-    const [firstName, setFirstName] = useState("");
+    const [firstName, setFirstName] = useState(""); //'useState("")' sets default
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [confirm, setConfirm] = useState("");
+    const [confirm, setConfirm] = useState("");//necessary for submitting form?
 
     const [firstNameError, setFirstNameError] = useState("");
     const [lastNameError, setLastNameError] = useState("");
@@ -16,7 +16,7 @@ const UserForm = (props) => {
 
 
     const createUser = (e) => {
-        e.preventDefault();
+        e.preventDefault(); //prevent browser from automatically firing this function
         const newUser = { firstName, lastName, email, password };
         console.log("Welcome", newUser);
     };
