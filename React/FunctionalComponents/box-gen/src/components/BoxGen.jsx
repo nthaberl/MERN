@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 
 const BoxGen = (props) => {
-
-    console.log(props);
     const { currentColor } = props;
 
 
