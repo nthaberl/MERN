@@ -1,1 +1,1 @@
-practice fetching information from Pokemon API
+practice fetching information from Pokemon API using Vanilla JS and Axios
