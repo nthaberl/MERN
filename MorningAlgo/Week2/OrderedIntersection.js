@@ -30,4 +30,17 @@ const expected3 = [];
  *    sorted and contains only the shared values between the two arrays
  *    deduped.
  */
-function orderedIntersection(sortedA, sortedB) { }
+function orderedIntersection(sortedA, sortedB) {
+    let intersection = sortedA.filter(x => sortedB.includes(x));
+    console.log(intersection);
+    let newArray = [];
+    for (let i = 0; i < intersection.length; i++) {
+        console.log(intersection[i]);
+        if (intersection[i] != intersection[i + 1]) {
+            newArray.push(intersection[i])
+        }
+    }
+    console.log(newArray)
+}
+
+orderedIntersection(arrA1, arrB1)
