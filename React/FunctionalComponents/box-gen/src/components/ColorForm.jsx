@@ -5,7 +5,7 @@ const ColorForm = (props) => {
     const [color, setColor] = useState("");
 
     const handleSubmit = e => {
-        e.preventDefault();
+        e.preventDefault(); //prevents browser from refreshing on every submit
         const newColor = {
             color
         };
