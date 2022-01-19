@@ -14,7 +14,7 @@ function App() {
       })
       .then(jsonResponse => {
         console.log(jsonResponse);
-        setPokemon(jsonResponse.results)
+        setPokemon(jsonResponse.results) //all pokemon are listed under .results in API
       })
       .catch(error => console.log(error)) //do this if there is an error
   }
