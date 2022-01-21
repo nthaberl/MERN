@@ -12,10 +12,9 @@ function App() {
     const setTask = newTaskStateArr[1];
    */
 
-
-
   /* Since states are stored on App.js, functions will also be written here since functions will need access to those states
   otherwise would have to pass in states */
+
   //CREATE -- to/from form
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,10 +25,12 @@ function App() {
     const taskObj = {
       description: newTask,
       completed: false
-    } //when adding a new task will automatically pass in a task OBJECT with a default value of false!
+    }
+    //when adding a new task will automatically pass in a task OBJECT with a default value of false!
     //setTasks and pass in a new object containing current values and adding in newest task
     setTasks([...tasks, taskObj]);
-    setNewTask(""); //resets the form to blank after adding to setTasks
+    setNewTask("");
+    //resets the form to blank after adding to setTasks
     console.log(tasks)
   }
 
@@ -47,20 +48,22 @@ function App() {
   const completeTask = (updateIdx) => {
     let updatedTasks = tasks.map((task, idx) => {
       if (updateIdx === idx) {
-        task.completed = !task.completed; //if the index passed in matches the value we will only reverse the value for that item at that index
+        task.completed = !task.completed;
+        //if the index passed in matches the value we will only reverse the value for that item at that index
         /*         let updatedTasks = { ...task, completed: !task.completed}
                 return updatedTasks 
                 this would be "proper" way to update to avoid mutating task directly*/
       }
-      return task //returns every task
+      return task
+      //returns every task
     });
     setTasks(updatedTasks);
   }
 
   return (
     <div className="App">
-      <TaskForm handleSubmit={handleSubmit}/>
-      <Tasks tasks={tasks} completeTask={completeTask} handleDelete={handleDelete}/>
+      <TaskForm handleSubmit={handleSubmit} newTask={newTask} setNewTask={setNewTask}/>
+      <Tasks tasks={tasks} completeTask={completeTask} handleDelete={handleDelete} />
     </div>
   );
 }

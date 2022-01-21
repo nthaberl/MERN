@@ -9,7 +9,8 @@ const Tasks = (props) => {
             {tasks.map((task, idx) => {
                 return (
                     <div key={idx}>
-                        <input type="checkbox" onChange={(e) => completeTask(idx)} checked={task.completed} className="uk-checkbox" /> {/* need to connect checkbox to state of current state, checkboxes have boolean values so helps to connect it to a state that is stored as boolean */}
+                        <input type="checkbox" onChange={(e) => completeTask(idx)} checked={task.completed} className="uk-checkbox" /> 
+                        {/* need to connect checkbox to state of current state, checkboxes have boolean values so helps to connect it to a state that is stored as boolean */}
                         {
                             (task.completed) ? <p style={{ display: 'inline-block', textDecoration: "line-through" }}>{task.description}</p> : <p style={{ display: 'inline-block' }}>{task.description}</p>
                         }
