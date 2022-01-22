@@ -32,7 +32,6 @@ const Starships = (props) => {
                     </div>)
                     :
                     <Error/>
-                //display error component
             }
         </div>
     )

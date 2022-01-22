@@ -4,8 +4,7 @@ import Error from './Error';
 import axios from 'axios';
 
 const Planets = (props) => {
-    const [planets, setPlanets] = useState(""); //using null because sometimes empty string can trip up ternaries
-    //fine in forms but not as great for displays
+    const [planets, setPlanets] = useState("");
     const { id } = useParams();
 
 
