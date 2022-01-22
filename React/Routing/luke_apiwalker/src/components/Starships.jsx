@@ -4,7 +4,7 @@ import Error from './Error';
 import axios from 'axios';
 
 const Starships = (props) => {
-    const [starship, setStarship] = useState(null);
+    const [starship, setStarship] = useState("");
     const { id } = useParams();
 
 
