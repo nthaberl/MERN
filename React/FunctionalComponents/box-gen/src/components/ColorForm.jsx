@@ -25,9 +25,7 @@ const ColorForm = (props) => {
         <div>
             <form onSubmit={handleSubmit}>
                 <p>Pick a color!</p>
-                    <p><input type="text" value={color} onChange={handleColor}>
-
-                    </input>
+                    <p><input type="text" value={color} onChange={handleColor}/>
                     <button>Submit</button>
                 </p>
             </form>
