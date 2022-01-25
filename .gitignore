@@ -122,3 +122,11 @@ Express/HelloExpress/package-lock.json
 Express/HelloExpress/package.json
 Express/HelloExpress/server.js
 ~WRL1355.tmp
+Fullstack/fullstackLecture/server/.gitignore
+Fullstack/fullstackLecture/server/package-lock.json
+Fullstack/fullstackLecture/server/package.json
+Fullstack/fullstackLecture/server/server.js
+Fullstack/fullstackLecture/server/config/mongoose.config.js
+Fullstack/fullstackLecture/server/controllers/note.controller.js
+Fullstack/fullstackLecture/server/models/note.js
+Fullstack/fullstackLecture/server/routes/notes.routes.js
