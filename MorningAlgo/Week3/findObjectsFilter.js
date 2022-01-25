@@ -66,7 +66,7 @@ console.log(findObjectsFilter(searchFor1, items));
 /* //accessing values
 console.log(Object.keys(doggo)); // returns an array with all the keys in the object
 console.log(Object.values(doggo)) //returns array with values
-console.log(Object.entries(doggo)); //returns an array full of arrays, 1st index is key, 2nd is values
+console.log(Object.entries(doggo)); //returns an array full of arrays-2 dimensional array, 1st index is key, 2nd is values
 
 //hasownproperty
 doggo.hasOwnProperty("canBark"); //returns bool
