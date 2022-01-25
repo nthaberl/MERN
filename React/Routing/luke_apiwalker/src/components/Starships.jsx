@@ -31,7 +31,7 @@ const Starships = (props) => {
                         <p>Ship's Value: {starship.cost_in_credits} (in Galactic Credit Standard)</p>
                     </div>)
                     :
-                    <Error/>
+                    <Error/> //instead of doing error component, set an error route in the catch. useEffect triggers AFTER loading the component
             }
         </div>
     )
