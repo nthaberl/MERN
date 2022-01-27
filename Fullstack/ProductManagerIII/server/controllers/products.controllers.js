@@ -28,7 +28,7 @@ module.exports = {
 
     //UPDATE
     updateExistingProduct : (req, res) => {
-        Product.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
+        Product.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true}) //we run validators for update because it is not automatic like it is for create function
         .then(updatedProduct => res.json({product: updatedProduct}))
         .catch( err => res.json({ message: 'hmmm.. something went wrong', error: err}))
     },
