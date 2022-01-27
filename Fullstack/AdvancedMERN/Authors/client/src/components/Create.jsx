@@ -46,6 +46,9 @@ const Create = () =>{
             <form onSubmit={handleSubmit}>
                 Name:
                 <input type="text" onChange={ e => setName(e.target.value)} value={name}/>
+                {error.map(( error, idx) => {
+                    return <p key={idx}> {error} </p>
+                })}
                 <br/>
                 <button onClick={ () => history.push("/")}>Cancel</button> &nbsp;
                 <button>Submit</button>

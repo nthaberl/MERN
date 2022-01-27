@@ -30,7 +30,7 @@ module.exports = {
         console.log(req.params);
         console.log(req.body)
         Author.findByIdAndUpdate(req.params.id, req.body, {
-            new: true, runValidators: true //returns new object that got updated
+            new: true, runValidators: true //returns new object that got updated, run validators for update because it is not automatic like it is for create function
         })
         .then( (updatedAuthor) => {
             res.json(updatedAuthor)})

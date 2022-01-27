@@ -34,7 +34,7 @@ const Update = () => {
             name
         }
 
-        //axios post request to DB
+        //axios put request to DB
         axios.put(`http://localhost:8000/api/authors/${id}`, updatedAuthor)
             .then(res => {
                 console.log(res.data);
@@ -59,6 +59,9 @@ const Update = () => {
             <form onSubmit={updateAuthor}>
                 Name:
                 <input type="text" onChange={e => setName(e.target.value)} value={name} />
+                {error.map(( error, idx) => {
+                    return <p key={idx}> {error} </p>
+                })}
                 <br />
                 <button onClick={() => history.push("/")}>Cancel</button> &nbsp;
                 <button>Submit</button>

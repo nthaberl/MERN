@@ -1,4 +1,4 @@
-import { Route, Redirect, Switch } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Home from './components/Home';
 import Create from './components/Create';
 import Update from './components/Update'
@@ -13,14 +13,17 @@ function App() {
         <Home />
       </Route>
 
+      {/* Redirects path back to main page */}
       <Route exact path="/authors">
         <Redirect to="/" />
       </Route>
 
+      {/* CREATE */}
       <Route exact path="/new">
         <Create />
       </Route>
 
+      {/* UPDATE */}
       <Route exact path="/edit/:id">
         <Update />
       </Route>

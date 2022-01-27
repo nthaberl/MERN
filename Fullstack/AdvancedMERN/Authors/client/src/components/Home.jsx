@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [authors, setAuthors] = useState([]);
