@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 const DisplayAll = (props) => {
-    const { prodData, setProdData } = props; //passing in the props from app.js, letting us use functionality in this component
+    const { prodData, setProdData } = props; //passing in the props from main.jsx, letting us use functionality in this component
 
 const deleteProduct = (deletedId) => {
     axios.delete(`http://localhost:8000/api/products/${deletedId}`)
@@ -21,7 +21,7 @@ const deleteProduct = (deletedId) => {
             {prodData.map((products, idx) => {
                 return (
                     <p key={products._id}>
-                        <Link to={`/products/${products._id}`}>{products.title}</Link> 
+                        <Link to={`/products/${products._id}`}>{products.title}</Link> &nbsp;
                         <button onClick={() => deleteProduct(products._id)}>Delete</button>
                     </p>
                 )

@@ -7,8 +7,11 @@ const PORT = 8000;
 //MIDDLEWARE
 app.use(cors()); //will accept ANY request from ANYONE, fine for smaller projects
 app.use(express.json(), express.urlencoded({extended: true}));
+
+//db connection
 require ('./config/mongoose.config');
 
+//connecting to routes
 const AllProductRoutes = require('./routes/products.routes');
 AllProductRoutes(app);
 

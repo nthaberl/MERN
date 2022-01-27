@@ -21,7 +21,7 @@ const ProductDetail = (props) => {
         .then( res => {
             console.log(res.data);
             console.log("deleted the item!")
-            history.push("/")
+            history.push("/") //routes back to main page after deleting item
         })
         .catch( err => console.log(err))
     }
@@ -42,7 +42,7 @@ const ProductDetail = (props) => {
                         </div>
                     </div>)
                     :
-                    (<h1> try again </h1>)
+                    <h1> try again </h1>
             }
         </div>
     )

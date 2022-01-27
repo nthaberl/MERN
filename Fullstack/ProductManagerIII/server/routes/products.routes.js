@@ -1,6 +1,7 @@
 const ProductController = require('../controllers/products.controllers');
 console.log("this is the product controller", ProductController);
 const { findAllProducts, findSingleProducts, createNewProduct, updateExistingProduct, deleteExistingProduct } = require('../controllers/products.controllers')
+
 module.exports = app => {
     app.get('/api/hello', (req, res) => {
         res.json({message: "hello"})

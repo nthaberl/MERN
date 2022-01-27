@@ -10,7 +10,7 @@ const Main = (props) => {
         axios.get('http://localhost:8000/api/products')
             .then(res => {
                 // console.log(res.data.products); 
-                setProdData(res.data.products) // since we're just getting back the array of PRODUCTS, setProdDate needs to be an array. If we were setting all of the data object, keep it as an object
+                setProdData(res.data.products) // storing data of all of our products into state
             })
             .catch(err => console.log(err));
     }, [])
@@ -20,7 +20,8 @@ const Main = (props) => {
             <h1> Products Manager</h1>
             <ProductForm />
             <hr />
-            <DisplayAll prodData={prodData} setProdData={setProdData}/>
+            {/* pass product data as a prop into display component */}
+            <DisplayAll prodData={prodData} setProdData={setProdData}/> 
         </div>
     );
 }
