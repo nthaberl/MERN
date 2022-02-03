@@ -1,5 +1,7 @@
 const Product = require('../models/products.models')
 
+console.log(Product)
+
 module.exports = {
     //READ ALL
     findAllProducts : (req, res) => {
