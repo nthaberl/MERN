@@ -50,8 +50,6 @@ function findObjectsFilter(searchObj, items) {
         return filteredArray
     }
 
-
-
 console.log(findObjectsFilter(searchFor1, items));
 // console.log(findObjectsFilter(searchFor1, items).toString() == output1.toString());
 // console.log(findObjectsFilter(searchFor2, items));
